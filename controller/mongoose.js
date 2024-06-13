@@ -1,5 +1,5 @@
 //connecting to mongoose
-const dbURI = process.env.MONGODB_URI;
+const dbURI = "mongodb+srv://gabor1415:r5fLIzTQAwC6kck8@demochallenge.y0dztfg.mongodb.net/?retryWrites=true&w=majority&appName=demochallenge";
 mongoose
   .connect(dbURI)
   .then((result) =>
