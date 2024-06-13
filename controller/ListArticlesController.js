@@ -7,7 +7,7 @@ const listArticles = (req, res) => {
 
 
     Article.find().then((articles) => {
-        res.render("fullArticle", {
+        res.render("homepage", {
             allArticles: articles
         })
     })
