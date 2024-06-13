@@ -17,7 +17,8 @@ const getFullArticle = (req, res) => {
 
 //Functions for updating the article
 getEditArticlePage = (req, res) => {
-  console.log("Get req for edit article page sent.");
+
+  console.log("Get req for edit article page sent.", req.body);
   article
     .findById(req.params.id)
     .then((result) => {
@@ -33,9 +34,9 @@ getEditArticlePage = (req, res) => {
 updateArticle = (req, res) => {
   console.log("Request to update article sent.");
   article
-    .findByIdAndUpdate(req, params.id, req.body)
+    .findByIdAndUpdate(req.params.id, req.body)
     .then((result) => {
-      res.render("editArticle", {
+      res.render("fullArticle", {
         article: result,
       });
     })
@@ -49,7 +50,7 @@ deleteArticle = (req, res) => {
   article
     .findByIdAndDelete(req.params.id)
     .then(() => {
-      res.render("/");
+      res.redirect("/listArticles");
     })
     .catch((err) => {
       console.log(err);
