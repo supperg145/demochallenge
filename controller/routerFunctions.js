@@ -1,18 +1,19 @@
 const article = require("../model/articles");
 
 //functions to get the full article
-getFullArticle = (req, res) => {
-    console.log("Get req for full article page sent")
-    article.findById(req.params.id)
-    .then(() => {
-        res.render("fullArticle", {
-            article: result
-        })
+const getFullArticle = (req, res) => {
+  console.log("Get request for full article page sent");
+  article
+    .findById(req.params.id)
+    .then((result) => {
+      res.render("fullArticle", {
+        article: result,
+      });
     })
-    .catch(err => {
-        console.log(err)
-    })
-}
+    .catch((err) => {
+      console.error(err);
+    });
+};
 
 //Functions for updating the article
 getEditArticlePage = (req, res) => {
@@ -43,10 +44,21 @@ updateArticle = (req, res) => {
     });
 };
 
-
+deleteArticle = (req, res) => {
+  console.log("Request to delete article has been sent");
+  article
+    .findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.render("/");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 module.exports = {
   getEditArticlePage,
   updateArticle,
-  getFullArticle
+  getFullArticle,
+  deleteArticle,
 };

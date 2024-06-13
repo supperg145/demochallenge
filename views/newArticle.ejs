@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>New Article :</h1>
+
+    <p style="float: right;"><a href="/listArticles">Back</a></p>
+
+    <form action="/addArticle" method="post">
+        <h3>Title</h3>
+        <form action="/" method="post">
+            <input name="title" type="text" maxlength="25" />
+            <h3>Article</h3>
+
+            <textarea name="description" type="text" maxlength="100"></textarea>
+            <br/>
+            <button>Add article </button>
+        </form>
+
+
+</body>
+
+</html>
