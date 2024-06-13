@@ -3,6 +3,8 @@ const routes = require("./config/routes");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 require("dotenv").config();
+// schema
+const Article =require("./model/articles")
 
 //initializing express app with PORT
 const app = express();
@@ -20,6 +22,7 @@ app.set("view engine", "ejs");
 //tell the server where to find routes
 app.use(routes)
 //start the server
+
 const dbURI = "mongodb+srv://gabor1415:r5fLIzTQAwC6kck8@demochallenge.y0dztfg.mongodb.net/?retryWrites=true&w=majority&appName=demochallenge";
 mongoose
   .connect(dbURI)
