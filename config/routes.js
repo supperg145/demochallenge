@@ -10,4 +10,7 @@ router.get("/article/:id", routerFunctions.getFullArticle)
 router.get("/edit/article/:id", routerFunctions.getEditArticlePage)
 router.post("/update/article/:id", routerFunctions.updateArticle)
 
+
+//route for deleting
+router.get("/delete/article/:id", routerFunctions.deleteArticle)
 module.exports = router;

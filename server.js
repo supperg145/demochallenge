@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 //set the view engine as ejs to be able to show ejs code
 app.set("view engine", "ejs");
 //tell the server where to find routes
-//app.use(routes)
+app.use(routes)
 //start the server
 const dbURI = "mongodb+srv://gabor1415:r5fLIzTQAwC6kck8@demochallenge.y0dztfg.mongodb.net/?retryWrites=true&w=majority&appName=demochallenge";
 mongoose
